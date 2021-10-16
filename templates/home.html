@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h2>Enter your car number</h2>
+<form action="" method="POST">{% csrf_token %} {% csrf_token %}
+<input type="text" name="car_number" placeholder="Your car number...">
+<input type="submit" value="Hisoblash">
+<button><a href="{% url 'create' %}">Qo'shish</a></button>
+</form>
+
+<div class="container">
+    {{car.name}}
+   
+    <p><b> {{ car.car_number}}</b></p>
+   
+    <p>{{car.phone}}</p>
+    <p>{{car.date}}</p>
+    <p>{{car.price.category}}</p>
+    <p>{{car.price.price}}</p>
+    <p>{{car.date}}</p>
+    <p>{{this_time}}</p>
+    <p>{{all_time}}</p>
+    <p><b><i>{{price}}</i></b></p>
+</div>
+{% endblock content %}

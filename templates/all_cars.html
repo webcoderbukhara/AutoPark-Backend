@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<h2>AutoParkimizda mavjud barcha avtomobillar</h2>
+{% for car in cars %}
+<div>
+<a href="{% url 'edit' car.id %}">
+    <h3>{{ car.name }}</h3>
+<h3><small>{{ car.phone }}</small></h3>
+<h3><b>{{ car.car_number }}</b></h3>
+<p>{{ car.date }}</p>
+<p><b>{{ car.price.price }}</b></p>
+</div>
+</a>
+<hr>
+{% endfor %}
+{% endblock content %}

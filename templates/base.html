@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoPark</title>
+</head>
+<body>
+    <header style="display: flex; justify-content: space-between;">
+        <h2><a href="{% url 'home' %}">Auto<b>Park</b></a></h2>
+        <div>
+            <a href="{% url 'create' %}">Create car</a>
+
+            <a href="{% url 'all_cars' %}">All cars</a>
+            <a href="{% url 'car_history' %}">Cars history</a>
+        </div>
+    </header>
+
+
+    {% block content %}
+
+    {% endblock content %}
+</body>
+</html>

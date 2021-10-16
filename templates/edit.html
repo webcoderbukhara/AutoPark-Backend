@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+Car History
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="text" name="name" value="{{car.name}}">
+    <input type="text" name="phone" value="{{car.phone}}">
+    <input type="text" name="car_number" value="{{car.car_number}}" >
+    <select name="price" >
+        
+        {% for pri in price %}
+        {% if car.price == pri %}
+        <option selected value="{{pri.id}}">{{pri.category}}</option>
+        
+    {% else %}
+
+
+        <option value="{{pri.id}}">{{pri.category}}</option>
+       {% endif %}
+
+
+        {% endfor %}
+    </select>
+
+    <input type="submit" value="Edit">
+</form>
+<hr><hr>
+
+
+{% endblock content %}

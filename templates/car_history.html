@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+Car History
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="text" name="car_number" >
+    <input type="submit" value="Search">
+</form>
+<hr><hr>
+
+{% for car in cars %}
+
+<h2>{{car.name}} </h2>
+<p>{{car.phone}}</p>
+<p>{{car.car_number}}</p>
+<p>{{car.come_time}}</p>
+{{car.go_time}}
+<p>{{car.price.category }}</p>
+<p>{{car.price.price}}</p>
+<p>{{car.sum}} so'm</p>
+<p>{{car.all_time}} soat</p>
+<hr>
+
+{% endfor %}
+{% endblock content %}

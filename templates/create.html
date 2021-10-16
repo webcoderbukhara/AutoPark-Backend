@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h2>Mashina ma'lumotlarini kiriting:</h2>
+<form action="" method="POST">{% csrf_token %}
+
+    <input type="text" name="name" placeholder="Your name...">
+    <input type="text" name="phone" placeholder="Your phone number...">
+    <input type="text" name="car_number" placeholder="Your car number...">
+    <select name="price" >
+        <option value="">Mashina turini tanlang...</option>
+        {% for pri in price %}
+
+        <option value="{{pri.id}}">{{pri.category}}</option>
+
+
+        {% endfor %}
+    </select>
+
+
+
+    <input type="submit" value="Qo'shish">
+
+</form>
+
+{% endblock content %}
